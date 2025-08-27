@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Allow important pages
+Allow: /ukm
+Allow: /events
+Allow: /achievements
+Allow: /about
+Allow: /contact
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /ketua-ukm
+Disallow: /login
+Disallow: /register
+Disallow: /password
+
+# Disallow API endpoints
+Disallow: /api
+
+# Disallow storage files (except public images)
+Disallow: /storage/app
+Allow: /storage/ukm-logos
+Allow: /storage/ukm-banners
+Allow: /storage/avatars
+Allow: /storage/events
+
+# Disallow temporary and cache files
+Disallow: /vendor
+Disallow: /node_modules
+Disallow: /.env
+Disallow: /composer.json
+Disallow: /package.json
+
+# Allow search engines to crawl CSS and JS
+Allow: /css
+Allow: /js
+Allow: /build
+
+# Sitemap location
+Sitemap: http://localhost:8000/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

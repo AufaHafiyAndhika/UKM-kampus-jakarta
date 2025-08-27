@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Photo Test</title>
+    <style>
+        .avatar { width: 100px; height: 100px; border: 2px solid #ccc; border-radius: 50%; object-fit: cover; margin: 10px; }
+        .error { color: red; }
+        .success { color: green; }
+        .user-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Profile Photo Test</h1>
+    <div class='user-card'>
+        <h3>User: Rehan</h3>
+        <p>Avatar path: avatars/994pXqhe2ddecodKNh4uaqGspbznYWYjs9Yuhf08.jpg</p>
+        <p>Web URL: http://localhost:8000/storage/avatars/994pXqhe2ddecodKNh4uaqGspbznYWYjs9Yuhf08.jpg</p>
+        <img src="http://localhost:8000/storage/avatars/994pXqhe2ddecodKNh4uaqGspbznYWYjs9Yuhf08.jpg" alt="Rehan" class="avatar" 
+             onload="this.nextElementSibling.innerHTML='<span class=success>✅ Image loaded successfully!</span>'"
+             onerror="this.nextElementSibling.innerHTML='<span class=error>❌ Image failed to load!</span>'">
+        <p>Loading...</p>
+        <p><a href="http://localhost:8000/storage/avatars/994pXqhe2ddecodKNh4uaqGspbznYWYjs9Yuhf08.jpg" target="_blank">Test direct access</a></p>
+    </div>
+</body>
+</html>

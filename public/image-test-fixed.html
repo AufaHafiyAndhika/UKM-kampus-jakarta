@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🖼️ Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { 
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 30px; 
+            border-radius: 12px; 
+            margin-bottom: 30px; 
+        }
+        .test-section { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-item { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 15px 0; 
+            background: #f8f9fa; 
+        }
+        .test-image { 
+            max-width: 150px; 
+            max-height: 100px; 
+            border: 2px solid #ddd; 
+            border-radius: 4px; 
+            margin: 10px 0; 
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .test-link { 
+            display: inline-block; 
+            background: #007bff; 
+            color: white; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            margin: 5px; 
+        }
+        .test-link:hover { background: #0056b3; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>🖼️ Image Loading Test</h1>
+            <p>After storage link fix</p>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🏛️ UKM Logos</h2>
+            <div class='image-item'>
+                <h4>IMMA</h4>
+                <p><strong>File:</strong> ukms/logos/XXNC1QasCMWPySb4pa7Am60J5yprZ1PgvWJ5jK8b.jpg</p>
+                <p><strong>Status:</strong> <span class="success">✅ Available</span></p><br><img src='http://localhost:8000/storage/ukms/logos/XXNC1QasCMWPySb4pa7Am60J5yprZ1PgvWJ5jK8b.jpg' alt='IMMA' class='test-image'></div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>📅 Event Posters</h2>
+            <div class='image-item'>
+                <h4>Bukber</h4>
+                <p><strong>File:</strong> events/posters/FNKDppyjNsNIeqhwWmCy4czlcyZPzKd4cLo2c3M0.jpg</p>
+                <p><strong>Status:</strong> <span class="success">✅ Available</span></p><br><img src='http://localhost:8000/storage/events/posters/FNKDppyjNsNIeqhwWmCy4czlcyZPzKd4cLo2c3M0.jpg' alt='Bukber' class='test-image'></div>
+            <div class='image-item'>
+                <h4>Rapat Ormawa</h4>
+                <p><strong>File:</strong> events/posters/rlwBcAe57uDNOqWBMzFy1okYYP50dnH0m7evaP42.jpg</p>
+                <p><strong>Status:</strong> <span class="success">✅ Available</span></p><br><img src='http://localhost:8000/storage/events/posters/rlwBcAe57uDNOqWBMzFy1okYYP50dnH0m7evaP42.jpg' alt='Rapat Ormawa' class='test-image'></div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🔗 Test Links</h2>
+            <a href='http://127.0.0.1:8000/admin/events' class='test-link' target='_blank'>Admin Events</a>
+            <a href='http://127.0.0.1:8000/kegiatan' class='test-link' target='_blank'>Public Events</a>
+            <a href='http://127.0.0.1:8000/ukms' class='test-link' target='_blank'>UKMs List</a>
+        </div>
+        
+        <div class='test-section'>
+            <h2>✅ Fix Applied</h2>
+            <p><strong>Storage link recreated successfully!</strong></p>
+            <p>Images should now load properly without 403 errors.</p>
+        </div>
+    </div>
+</body>
+</html>

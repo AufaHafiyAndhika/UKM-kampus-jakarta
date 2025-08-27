@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Removal & Notification Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 2px solid #ddd; 
+            border-radius: 10px; 
+            background: #f9f9f9; 
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .notification { 
+            background: #fff3cd; 
+            border: 1px solid #ffeaa7; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 10px 0; 
+        }
+        .removed-status { 
+            background: #f8d7da; 
+            color: #721c24; 
+            padding: 8px 12px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+        }
+        .can-register { 
+            background: #d4edda; 
+            color: #155724; 
+            padding: 8px 12px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Member Removal & Notification Test</h1>
+    
+    <div class='test-section'>
+        <h2>📊 Test Results</h2>
+        <p><strong>UKM:</strong> IMMA</p>
+        <p><strong>Test Student:</strong> Aufa</p>
+        <p><strong>Current Members:</strong> 1</p>
+        <p><strong>Member Status:</strong> <span class='removed-status'>COMPLETELY REMOVED</span></p>
+        <p><strong>Can Re-register:</strong> <span class='can-register'>YES</span></p>
+    </div>
+    
+    <div class='test-section'>
+        <h2>📧 Notifications Sent</h2>
+        <div class='notification'>
+            <h4>Dikeluarkan dari UKM</h4>
+            <p>Anda telah dikeluarkan dari UKM IMMA. Pesan dari ketua UKM: Test removal for demonstration purposes Anda dapat mendaftar ulang jika ingin bergabung kembali.</p>
+            <small>Sent: 21 Jun 2025 10:26:22</small>
+        </div>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🔗 Test Links</h2>
+        <ul>
+            <li><a href='http://127.0.0.1:8000/ukms/imma' target='_blank'><strong>IMMA UKM Detail</strong> - Should show registration button for removed member</a></li>
+            <li><a href='http://127.0.0.1:8000/login' target='_blank'><strong>Login as Student</strong> - Login as aufa@student.telkomuniversity.ac.id</a></li>
+            <li><a href='http://127.0.0.1:8000/notifications' target='_blank'><strong>Notifications</strong> - Check removal notification</a></li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>✅ Expected Behavior</h2>
+        <ul>
+            <li>✅ Member completely removed from UKM (not just inactive)</li>
+            <li>✅ Notification sent to removed member with ketua's message</li>
+            <li>✅ Registration button appears for removed member</li>
+            <li>✅ Member can register again as new application</li>
+            <li>✅ Member count decremented correctly</li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🧪 Test Instructions</h2>
+        <ol>
+            <li>Login as ketua UKM</li>
+            <li>Go to member management and remove a member</li>
+            <li>Check that notification is sent</li>
+            <li>Login as removed member and check notifications</li>
+            <li>Visit UKM detail page and verify registration button appears</li>
+            <li>Try to register again</li>
+        </ol>
+    </div>
+</body>
+</html>

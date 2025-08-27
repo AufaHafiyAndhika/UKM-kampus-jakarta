@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Achievements Display Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .achievement-card { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 10px 0; 
+            background: #f9f9f9; 
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            font-size: 12px; 
+            font-weight: bold; 
+            margin-right: 5px; 
+        }
+        .badge-success { background: #d4edda; color: #155724; }
+        .badge-info { background: #d1ecf1; color: #0c5460; }
+        .badge-warning { background: #fff3cd; color: #856404; }
+        .badge-secondary { background: #e2e3e5; color: #383d41; }
+        .position-badge { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            background: linear-gradient(135deg, #ffd700, #ffb347); 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            font-weight: bold; 
+            float: right; 
+        }
+    </style>
+</head>
+<body>
+    <h1>IMMA UKM Achievements Test</h1>
+    
+    <p><strong>Achievement Count:</strong> 0</p>
+    <p><strong>Direct Count:</strong> 1</p>
+    
+    <h2>Achievements:</h2>
+    <div class='achievement-card'>
+        <div style='overflow: hidden;'>
+            <div class='position-badge'>#1</div>
+            <h3>Lomba Tilawah</h3>
+            <div style='margin: 10px 0;'>
+                <span class='badge badge-warning'>Regional</span>
+                <span class='badge badge-secondary'>Award</span>
+                <span class='badge badge-warning'>⭐ Unggulan</span>
+            </div>
+            <p><strong>Tanggal:</strong> 21 Jun 2025</p>
+            <p><strong>Penyelenggara:</strong> PBNU</p>
+            <p><strong>Peserta:</strong> Rahadian Nungki syaputra</p>
+            <p><strong>Deskripsi:</strong> Memenangkan lomba Dai Quran</p>
+        </div>
+    </div>
+    
+    <h2>Test Links:</h2>
+    <ul>
+        <li><a href='http://127.0.0.1:8000/ukms/imma' target='_blank'>IMMA UKM Detail Page</a></li>
+        <li><a href='http://127.0.0.1:8000/ukms' target='_blank'>All UKMs</a></li>
+        <li><a href='http://127.0.0.1:8000/' target='_blank'>Homepage (should show achievements)</a></li>
+    </ul>
+</body>
+</html>

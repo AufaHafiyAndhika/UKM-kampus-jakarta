@@ -1,0 +1,222 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\Ukm;
+use App\Models\User;
+use Illuminate\Support\Str;
+
+class UkmDataSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $ukms = [
+            [
+                'name' => 'UKM Badminton',
+                'slug' => 'badminton',
+                'description' => 'Unit Kegiatan Mahasiswa Badminton Telkom Jakarta adalah wadah bagi mahasiswa yang memiliki passion dalam olahraga badminton. Kami mengembangkan kemampuan teknik, taktik, dan mental bertanding melalui latihan rutin dan kompetisi. UKM ini telah meraih berbagai prestasi di tingkat regional dan nasional.',
+                'category' => 'Olahraga',
+                'logo' => 'ukm-logos/badminton.png',
+                'banner' => 'ukm-banners/badminton-banner.jpg',
+                'email' => 'badminton@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567801',
+                'instagram' => '@ukmbadminton_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 50,
+                'current_members' => 35,
+                'status' => 'active',
+                'established_year' => 2018,
+                'vision' => 'Menjadi UKM badminton terdepan yang menghasilkan atlet berprestasi dan berkarakter.',
+                'mission' => 'Mengembangkan potensi mahasiswa dalam bidang badminton melalui latihan berkualitas, kompetisi, dan pembinaan karakter.',
+                'achievements' => 'Juara 1 Badminton Championship Jakarta 2023, Juara 2 Inter-University Tournament 2022',
+                'meeting_schedule' => 'Selasa & Kamis 16:00-18:00, Sabtu 08:00-10:00',
+                'meeting_location' => 'GOR Telkom University Jakarta'
+            ],
+            [
+                'name' => 'UKM DPM (Dewan Perwakilan Mahasiswa)',
+                'slug' => 'dpm',
+                'description' => 'Dewan Perwakilan Mahasiswa (DPM) adalah lembaga legislatif mahasiswa yang berperan sebagai pengawas dan mitra BEM dalam menjalankan program kerja kemahasiswaan. DPM bertugas menyuarakan aspirasi mahasiswa dan memastikan terlaksananya good governance dalam organisasi kemahasiswaan.',
+                'category' => 'Politik & Pemerintahan',
+                'logo' => 'ukm-logos/dpm.png',
+                'banner' => 'ukm-banners/dpm-banner.jpg',
+                'email' => 'dpm@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567802',
+                'instagram' => '@dpm_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 25,
+                'current_members' => 20,
+                'status' => 'active',
+                'established_year' => 2017,
+                'vision' => 'Menjadi lembaga legislatif mahasiswa yang aspiratif, demokratis, dan berintegritas.',
+                'mission' => 'Menyuarakan aspirasi mahasiswa, mengawasi kinerja eksekutif mahasiswa, dan memperjuangkan kepentingan mahasiswa.',
+                'achievements' => 'Berhasil memperjuangkan kebijakan UKT yang lebih fleksibel, Implementasi sistem pengaduan mahasiswa online',
+                'meeting_schedule' => 'Senin 19:00-21:00',
+                'meeting_location' => 'Ruang Sidang Kemahasiswaan'
+            ],
+            [
+                'name' => 'UKM Esport',
+                'slug' => 'esport',
+                'description' => 'UKM Esport Telkom Jakarta adalah komunitas gamers yang fokus pada pengembangan kemampuan bermain game kompetitif. Kami menaungi berbagai divisi game seperti Mobile Legends, PUBG Mobile, Valorant, dan Dota 2. UKM ini menjadi wadah untuk mengasah skill gaming dan berkompetisi di level nasional.',
+                'category' => 'Teknologi & Gaming',
+                'logo' => 'ukm-logos/esport.png',
+                'banner' => 'ukm-banners/esport-banner.jpg',
+                'email' => 'esport@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567803',
+                'instagram' => '@esport_telkomjkt',
+                'website' => 'https://esport.telkomuniversity.ac.id',
+                'recruitment_open' => true,
+                'max_members' => 80,
+                'current_members' => 65,
+                'status' => 'active',
+                'established_year' => 2019,
+                'vision' => 'Menjadi UKM esport terdepan yang menghasilkan atlet esport berprestasi tingkat nasional.',
+                'mission' => 'Mengembangkan ekosistem esport di kampus, membina atlet esport berkualitas, dan membangun komunitas gaming yang positif.',
+                'achievements' => 'Juara 1 Mobile Legends University Championship 2023, Top 4 PUBG Mobile Campus Cup 2022',
+                'meeting_schedule' => 'Senin, Rabu, Jumat 19:00-22:00',
+                'meeting_location' => 'Lab Gaming & Multimedia'
+            ],
+            [
+                'name' => 'UKM Futsal',
+                'slug' => 'futsal',
+                'description' => 'UKM Futsal Telkom Jakarta adalah wadah bagi mahasiswa yang memiliki passion dalam olahraga futsal. Kami mengembangkan teknik individu, kerjasama tim, dan strategi permainan melalui latihan intensif dan pertandingan persahabatan. UKM ini aktif mengikuti berbagai turnamen antar universitas.',
+                'category' => 'Olahraga',
+                'logo' => 'ukm-logos/futsal.png',
+                'banner' => 'ukm-banners/futsal-banner.jpg',
+                'email' => 'futsal@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567804',
+                'instagram' => '@futsal_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 40,
+                'current_members' => 32,
+                'status' => 'active',
+                'established_year' => 2018,
+                'vision' => 'Menjadi tim futsal universitas yang kompetitif dan berprestasi di tingkat regional.',
+                'mission' => 'Mengembangkan kemampuan futsal mahasiswa, membangun sportivitas, dan mengharumkan nama Telkom University Jakarta.',
+                'achievements' => 'Juara 3 Futsal Championship Jabodetabek 2023, Best Fair Play Award 2022',
+                'meeting_schedule' => 'Selasa & Kamis 16:00-18:00, Minggu 08:00-10:00',
+                'meeting_location' => 'Lapangan Futsal Kampus'
+            ],
+            [
+                'name' => 'UKM IMMA (Ikatan Mahasiswa Muslim Akuntansi)',
+                'slug' => 'imma',
+                'description' => 'IMMA (Ikatan Mahasiswa Muslim Akuntansi) adalah organisasi yang menghimpun mahasiswa muslim khususnya dari program studi akuntansi dan ekonomi. Kami fokus pada pengembangan spiritual, akademik, dan sosial melalui kajian Islam, diskusi ekonomi syariah, dan kegiatan sosial kemasyarakatan.',
+                'category' => 'Keagamaan',
+                'logo' => 'ukm-logos/imma.png',
+                'banner' => 'ukm-banners/imma-banner.jpg',
+                'email' => 'imma@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567805',
+                'instagram' => '@imma_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 60,
+                'current_members' => 45,
+                'status' => 'active',
+                'established_year' => 2017,
+                'vision' => 'Menjadi wadah pengembangan mahasiswa muslim yang berakhlak mulia dan kompeten di bidang ekonomi.',
+                'mission' => 'Menyelenggarakan kajian Islam, mengembangkan pemahaman ekonomi syariah, dan membangun ukhuwah islamiyah.',
+                'achievements' => 'Penyelenggaraan Seminar Ekonomi Syariah 2023, Program Santunan Anak Yatim rutin',
+                'meeting_schedule' => 'Jumat 13:00-15:00',
+                'meeting_location' => 'Musholla Kampus'
+            ],
+            [
+                'name' => 'UKM Mapala (Mahasiswa Pecinta Alam)',
+                'slug' => 'mapala',
+                'description' => 'UKM Mapala (Mahasiswa Pecinta Alam) Telkom Jakarta adalah komunitas mahasiswa yang memiliki kecintaan terhadap alam dan lingkungan. Kami melakukan kegiatan pendakian gunung, camping, rock climbing, dan konservasi alam. UKM ini juga aktif dalam edukasi lingkungan dan disaster response.',
+                'category' => 'Alam & Lingkungan',
+                'logo' => 'ukm-logos/mapala.png',
+                'banner' => 'ukm-banners/mapala-banner.jpg',
+                'email' => 'mapala@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567806',
+                'instagram' => '@mapala_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 45,
+                'current_members' => 38,
+                'status' => 'active',
+                'established_year' => 2018,
+                'vision' => 'Menjadi komunitas pecinta alam yang berperan aktif dalam pelestarian lingkungan dan pembentukan karakter.',
+                'mission' => 'Mengembangkan kecintaan terhadap alam, melatih mental dan fisik melalui kegiatan alam, serta berkontribusi dalam konservasi lingkungan.',
+                'achievements' => 'Ekspedisi Gunung Semeru 2023, Program Penanaman 1000 Pohon, Pelatihan SAR Dasar',
+                'meeting_schedule' => 'Sabtu 14:00-17:00',
+                'meeting_location' => 'Basecamp Mapala'
+            ],
+            [
+                'name' => 'UKM PMK (Persekutuan Mahasiswa Kristen)',
+                'slug' => 'pmk',
+                'description' => 'PMK (Persekutuan Mahasiswa Kristen) adalah wadah persekutuan bagi mahasiswa Kristen di Telkom University Jakarta. Kami menyelenggarakan ibadah, fellowship, retreat, dan pelayanan sosial. UKM ini bertujuan untuk menguatkan iman dan membangun karakter Kristiani dalam kehidupan kampus.',
+                'category' => 'Keagamaan',
+                'logo' => 'ukm-logos/pmk.png',
+                'banner' => 'ukm-banners/pmk-banner.jpg',
+                'email' => 'pmk@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567807',
+                'instagram' => '@pmk_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 40,
+                'current_members' => 28,
+                'status' => 'active',
+                'established_year' => 2017,
+                'vision' => 'Menjadi persekutuan yang membawa terang Kristus dalam kehidupan kampus dan masyarakat.',
+                'mission' => 'Menguatkan iman mahasiswa Kristen, membangun persekutuan yang solid, dan melayani sesama dengan kasih.',
+                'achievements' => 'Retreat Tahunan 2023, Program Bakti Sosial Panti Asuhan, Christmas Celebration',
+                'meeting_schedule' => 'Kamis 18:00-20:00',
+                'meeting_location' => 'Ruang Persekutuan'
+            ],
+            [
+                'name' => 'UKM Seni Budaya',
+                'slug' => 'seni-budaya',
+                'description' => 'UKM Seni Budaya Telkom Jakarta adalah wadah kreativitas mahasiswa dalam bidang seni dan budaya Indonesia. Kami mengembangkan berbagai kesenian tradisional seperti tari, musik tradisional, teater, dan seni rupa. UKM ini berperan dalam melestarikan budaya Indonesia di lingkungan kampus.',
+                'category' => 'Seni & Budaya',
+                'logo' => 'ukm-logos/seni-budaya.png',
+                'banner' => 'ukm-banners/seni-budaya-banner.jpg',
+                'email' => 'senibudaya@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567808',
+                'instagram' => '@senibudaya_telkomjkt',
+                'website' => null,
+                'recruitment_open' => true,
+                'max_members' => 55,
+                'current_members' => 42,
+                'status' => 'active',
+                'established_year' => 2017,
+                'vision' => 'Menjadi pusat pengembangan seni dan budaya yang melestarikan kearifan lokal Indonesia.',
+                'mission' => 'Mengembangkan bakat seni mahasiswa, melestarikan budaya Indonesia, dan memperkenalkan kesenian tradisional kepada generasi muda.',
+                'achievements' => 'Juara 1 Festival Tari Tradisional 2023, Pementasan Teater "Malin Kundang" 2022',
+                'meeting_schedule' => 'Rabu & Sabtu 15:00-18:00',
+                'meeting_location' => 'Studio Seni & Budaya'
+            ],
+            [
+                'name' => 'UKM Sistem Informasi',
+                'slug' => 'sistem-informasi',
+                'description' => 'UKM Sistem Informasi adalah komunitas mahasiswa yang fokus pada pengembangan teknologi informasi dan sistem. Kami menyelenggarakan workshop programming, seminar teknologi, hackathon, dan project development. UKM ini menjadi wadah untuk mengasah kemampuan teknis dan soft skills di bidang IT.',
+                'category' => 'Teknologi & Informasi',
+                'logo' => 'ukm-logos/sistem-informasi.png',
+                'banner' => 'ukm-banners/sistem-informasi-banner.jpg',
+                'email' => 'si@ukm.telkomuniversity.ac.id',
+                'phone' => '081234567809',
+                'instagram' => '@si_telkomjkt',
+                'website' => 'https://si.telkomuniversity.ac.id',
+                'recruitment_open' => true,
+                'max_members' => 70,
+                'current_members' => 58,
+                'status' => 'active',
+                'established_year' => 2018,
+                'vision' => 'Menjadi komunitas IT terdepan yang menghasilkan lulusan kompeten dan inovatif.',
+                'mission' => 'Mengembangkan kemampuan programming, membangun solusi teknologi, dan mempersiapkan mahasiswa untuk industri IT.',
+                'achievements' => 'Juara 2 Hackathon Jakarta 2023, Pengembangan Aplikasi Kampus Digital, Workshop AI & Machine Learning',
+                'meeting_schedule' => 'Selasa & Kamis 19:00-21:00',
+                'meeting_location' => 'Lab Komputer & Programming'
+            ]
+        ];
+
+        foreach ($ukms as $ukmData) {
+            Ukm::create($ukmData);
+        }
+    }
+}

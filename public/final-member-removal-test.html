@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎯 Final Member Removal System Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 25px; 
+            border-radius: 12px; 
+            background: white; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 40px; 
+            border-radius: 12px; 
+            margin-bottom: 30px; 
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .warning { color: #ffc107; font-weight: bold; }
+        .info { color: #17a2b8; font-weight: bold; }
+        .feature-card { 
+            border: 2px solid #e9ecef; 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin: 15px 0; 
+            background: #f8f9fa; 
+        }
+        .feature-card.implemented { border-color: #28a745; background: #d4edda; }
+        .notification-demo { 
+            background: #fff3cd; 
+            border: 1px solid #ffeaa7; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 15px 0; 
+        }
+        .workflow-step { 
+            display: flex; 
+            align-items: center; 
+            margin: 15px 0; 
+            padding: 15px; 
+            background: #e3f2fd; 
+            border-radius: 8px; 
+        }
+        .step-number { 
+            background: #2196f3; 
+            color: white; 
+            width: 30px; 
+            height: 30px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-right: 15px; 
+            font-weight: bold; 
+        }
+        .test-link { 
+            display: inline-block; 
+            background: #007bff; 
+            color: white; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            margin: 10px 10px 10px 0; 
+            transition: background 0.3s; 
+        }
+        .test-link:hover { background: #0056b3; color: white; text-decoration: none; }
+        .test-link.admin { background: #dc3545; }
+        .test-link.admin:hover { background: #c82333; }
+        .test-link.student { background: #28a745; }
+        .test-link.student:hover { background: #1e7e34; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>🎯 Member Removal System</h1>
+            <p>Complete implementation with notifications and re-registration capability</p>
+        </div>
+        
+        <div class='test-section'>
+            <h2>📊 System Status</h2>
+            <div class='feature-card implemented'>
+                <h4>✅ Complete Member Removal</h4>
+                <p>Members are completely removed from UKM (not just marked inactive)</p>
+            </div>
+            <div class='feature-card implemented'>
+                <h4>✅ Notification System</h4>
+                <p>Removed members receive notifications with ketua's message</p>
+            </div>
+            <div class='feature-card implemented'>
+                <h4>✅ Re-registration Capability</h4>
+                <p>Removed members can register again as new applications</p>
+            </div>
+            <div class='feature-card implemented'>
+                <h4>✅ Member Count Management</h4>
+                <p>UKM member count is properly decremented when members are removed</p>
+            </div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🔄 Removal Workflow</h2>
+            <div class='workflow-step'>
+                <div class='step-number'>1</div>
+                <div>
+                    <strong>Ketua UKM removes member</strong><br>
+                    <small>From member management page with optional reason</small>
+                </div>
+            </div>
+            <div class='workflow-step'>
+                <div class='step-number'>2</div>
+                <div>
+                    <strong>Notification sent to member</strong><br>
+                    <small>Includes ketua's message and re-registration info</small>
+                </div>
+            </div>
+            <div class='workflow-step'>
+                <div class='step-number'>3</div>
+                <div>
+                    <strong>Member completely removed</strong><br>
+                    <small>No longer appears in member lists or admin views</small>
+                </div>
+            </div>
+            <div class='workflow-step'>
+                <div class='step-number'>4</div>
+                <div>
+                    <strong>Registration button appears</strong><br>
+                    <small>Member can register again on UKM detail page</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>📧 Notification Demo</h2>
+            <div class='notification-demo'>
+                <h4>🔔 Dikeluarkan dari UKM</h4>
+                <p><strong>Anda telah dikeluarkan dari UKM IMMA.</strong></p>
+                <p><strong>Pesan dari ketua UKM:</strong> Melanggar aturan UKM dan tidak aktif dalam kegiatan</p>
+                <p><em>Anda dapat mendaftar ulang jika ingin bergabung kembali.</em></p>
+                <small class='text-muted'>Sent: 21 Jun 2025 10:28:30</small>
+            </div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🧪 Test Instructions</h2>
+            <h3>For Ketua UKM:</h3>
+            <ol>
+                <li>Login as ketua UKM</li>
+                <li>Go to member management page</li>
+                <li>Click 'Keluarkan' on a member</li>
+                <li>Enter removal reason</li>
+                <li>Confirm removal</li>
+                <li>Verify member disappears from list</li>
+            </ol>
+            
+            <h3>For Removed Member:</h3>
+            <ol>
+                <li>Login as the removed member</li>
+                <li>Check notifications for removal message</li>
+                <li>Visit UKM detail page</li>
+                <li>Verify registration button appears</li>
+                <li>Try to register again</li>
+            </ol>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🔗 Test Links</h2>
+            <a href='http://127.0.0.1:8000/login' class='test-link admin' target='_blank'>
+                🔐 Login as Admin/Ketua UKM
+            </a>
+            <a href='http://127.0.0.1:8000/ketua-ukm/members' class='test-link admin' target='_blank'>
+                👥 Member Management
+            </a>
+            <a href='http://127.0.0.1:8000/ukms/imma' class='test-link student' target='_blank'>
+                🏛️ IMMA UKM Detail
+            </a>
+            <a href='http://127.0.0.1:8000/notifications' class='test-link student' target='_blank'>
+                🔔 Notifications
+            </a>
+            <a href='http://127.0.0.1:8000/admin/ukms/imma' class='test-link admin' target='_blank'>
+                ⚙️ Admin UKM View
+            </a>
+        </div>
+        
+        <div class='test-section'>
+            <h2>✅ Expected Results</h2>
+            <ul>
+                <li><span class='success'>✅</span> Member completely removed from all lists</li>
+                <li><span class='success'>✅</span> Notification sent with ketua's message</li>
+                <li><span class='success'>✅</span> Registration button appears for removed member</li>
+                <li><span class='success'>✅</span> Member can register again successfully</li>
+                <li><span class='success'>✅</span> UKM member count decremented properly</li>
+                <li><span class='success'>✅</span> No 'inactive' status - complete removal</li>
+            </ul>
+        </div>
+        
+        <div class='test-section'>
+            <h2>📋 Technical Implementation</h2>
+            <h4>Changes Made:</h4>
+            <ul>
+                <li><strong>NotificationService:</strong> Added createUkmMemberRemoved() method</li>
+                <li><strong>KetuaUkmController:</strong> Modified removeMember() to detach and notify</li>
+                <li><strong>UkmController:</strong> Updated registration logic for removed members</li>
+                <li><strong>Database:</strong> Complete removal instead of status change</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

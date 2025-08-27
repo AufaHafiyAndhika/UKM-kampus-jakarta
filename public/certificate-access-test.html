@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Access Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 2px solid #ddd; 
+            border-radius: 10px; 
+            background: #f9f9f9; 
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .cert-card { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 10px 0; 
+            background: white; 
+        }
+        .cert-link {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .cert-link:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏆 Certificate Access Test (No Login Required)</h1>
+    
+    <div class='test-section'>
+        <h2>📋 Available Certificates</h2>
+        <p>These certificates should be accessible without login:</p>
+        <div class='cert-card'>
+            <h4>Lomba Tilawah</h4>
+            <p><strong>UKM:</strong> IMMA</p>
+            <p><strong>Level:</strong> Regional</p>
+            <p><strong>Date:</strong> 21 Jun 2025</p>
+            <p><strong>Certificate URL:</strong> http://localhost:8000/storage/ukms/certificates/CpkGAdajmVPFGGsjoPS1BomAaJswaOnOpcLSv9OW.jpg</p>
+            <a href='http://localhost:8000/storage/ukms/certificates/CpkGAdajmVPFGGsjoPS1BomAaJswaOnOpcLSv9OW.jpg' target='_blank' class='cert-link'>
+                📜 View Certificate
+            </a>
+            <a href='http://localhost:8000/prestasi/1' target='_blank' class='cert-link' style='background: #007bff; margin-left: 10px;'>
+                📄 View Achievement Detail
+            </a>
+        </div>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🔗 Test Links</h2>
+        <ul>
+            <li><a href='http://127.0.0.1:8000/prestasi' target='_blank'><strong>All Achievements</strong> - Should be accessible without login</a></li>
+            <li><a href='http://localhost:8000/prestasi/1' target='_blank'><strong>Sample Achievement Detail</strong> - Should show certificate download</a></li>
+            <li><a href='http://127.0.0.1:8000/ukms/imma' target='_blank'><strong>UKM Detail</strong> - Should show achievement certificates</a></li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>✅ Expected Behavior</h2>
+        <ul>
+            <li>✅ Prestasi page accessible without login</li>
+            <li>✅ Achievement detail pages accessible without login</li>
+            <li>✅ Certificate files downloadable without login</li>
+            <li>✅ Certificate links work in UKM detail pages</li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🧪 Test Instructions</h2>
+        <ol>
+            <li>Open this page in incognito/private browsing mode</li>
+            <li>Make sure you're not logged in</li>
+            <li>Click on certificate links above</li>
+            <li>All certificates should open/download without requiring login</li>
+        </ol>
+    </div>
+</body>
+</html>

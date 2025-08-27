@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logo Test</title>
+    <style>
+        .logo { width: 100px; height: 100px; border: 2px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>UKM Logo Test</h1>
+    <h2>UKM: IMMA</h2>
+    <p>Logo path: ukms/logos/XXNC1QasCMWPySb4pa7Am60J5yprZ1PgvWJ5jK8b.jpg</p>
+    <p>Web URL: http://localhost:8000/storage/ukms/logos/XXNC1QasCMWPySb4pa7Am60J5yprZ1PgvWJ5jK8b.jpg</p>
+    
+    <h3>Logo Display Test:</h3>
+    <img src="http://localhost:8000/storage/ukms/logos/XXNC1QasCMWPySb4pa7Am60J5yprZ1PgvWJ5jK8b.jpg" alt="IMMA" class="logo" 
+         onload="document.getElementById('status').innerHTML='<span class=success>✅ Image loaded successfully!</span>'"
+         onerror="document.getElementById('status').innerHTML='<span class=error>❌ Image failed to load!</span>'">
+    
+    <p id="status">Loading...</p>
+    
+    <h3>Direct File Access Test:</h3>
+    <p><a href="http://localhost:8000/storage/ukms/logos/XXNC1QasCMWPySb4pa7Am60J5yprZ1PgvWJ5jK8b.jpg" target="_blank">Click to test direct access</a></p>
+</body>
+</html>

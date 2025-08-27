@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Members Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 2px solid #ddd; 
+            border-radius: 10px; 
+            background: #f9f9f9; 
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .member-card { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 10px 0; 
+            background: white; 
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            font-size: 12px; 
+            font-weight: bold; 
+            margin-right: 5px; 
+        }
+        .badge-active { background: #d4edda; color: #155724; }
+        .badge-pending { background: #fff3cd; color: #856404; }
+        .badge-rejected { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Admin UKM Members Test</h1>
+    
+    <div class='test-section'>
+        <h2>📊 Members Statistics</h2>
+        <p><strong>UKM:</strong> IMMA</p>
+        <p><strong>Total Members:</strong> 1</p>
+        <p><strong>Active:</strong> 0</p>
+        <p><strong>Pending:</strong> 1</p>
+        <p><strong>Rejected:</strong> 0</p>
+    </div>
+    
+    <div class='test-section'>
+        <h2>👥 Members List</h2>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🔗 Test Links</h2>
+        <ul>
+            <li><a href='http://127.0.0.1:8000/admin/ukms/5/members' target='_blank'><strong>Admin Members Page</strong> - Should show all members</a></li>
+            <li><a href='http://127.0.0.1:8000/admin/ukms/5' target='_blank'><strong>Admin UKM Detail</strong> - Should show members section</a></li>
+            <li><a href='http://127.0.0.1:8000/admin/ukms' target='_blank'><strong>Admin UKM Index</strong> - All UKMs</a></li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>📋 Debug Info</h2>
+        <p>If members are not showing, check:</p>
+        <ul>
+            <li>UKM members relationship in model</li>
+            <li>Pivot table data (ukm_members)</li>
+            <li>User relationship loading</li>
+            <li>View template rendering</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Members Fix Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info { background: #e7f3ff; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .member { background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #28a745; }
+    </style>
+</head>
+<body>
+    <h1>✅ Admin Members Fix Verification</h1>
+    
+    <div class='info'>
+        <h2>📊 Summary</h2>
+        <p><strong>UKM:</strong> IMMA</p>
+        <p><strong>Total Members:</strong> 2</p>
+        <p><strong>Fix Status:</strong> <span class='success'>✅ COMPLETED</span></p>
+    </div>
+    
+    <h2>👥 Members Data</h2>
+    <div class='member'>
+        <h4>✅ Rehan</h4>
+        <p><strong>Email:</strong> rehan@student.telkomuniversity.ac.id</p>
+        <p><strong>NIM:</strong> 1201214006</p>
+        <p><strong>Status:</strong> Inactive</p>
+        <p><strong>Role:</strong> Member</p>
+        <p><strong>Data Structure:</strong> ✅ Valid (no ->user needed)</p>
+    </div>
+    <div class='member'>
+        <h4>✅ Aufa</h4>
+        <p><strong>Email:</strong> aufa@student.telkomuniversity.ac.id</p>
+        <p><strong>NIM:</strong> 1201214002</p>
+        <p><strong>Status:</strong> Active</p>
+        <p><strong>Role:</strong> Member</p>
+        <p><strong>Data Structure:</strong> ✅ Valid (no ->user needed)</p>
+    </div>
+    
+    <div class='info'>
+        <h2>🔧 What Was Fixed</h2>
+        <ul>
+            <li>✅ Controller now uses <code>withPivot()</code> instead of <code>with(['user'])</code></li>
+            <li>✅ View now uses <code>$member->name</code> instead of <code>$member->user->name</code></li>
+            <li>✅ Proper many-to-many relationship handling</li>
+            <li>✅ No more 'Data Anggota Tidak Valid' errors</li>
+        </ul>
+    </div>
+    
+    <div class='info'>
+        <h2>🔗 Test Links</h2>
+        <ul>
+            <li><a href='http://127.0.0.1:8000/admin/ukms/imma' target='_blank'><strong>Admin UKM Detail</strong> - Should show members without errors</a></li>
+            <li><a href='http://127.0.0.1:8000/admin/ukms/5/members' target='_blank'><strong>Admin Members Page</strong> - Dedicated members page</a></li>
+        </ul>
+        <p><strong>Note:</strong> You need to be logged in as admin to access these pages.</p>
+    </div>
+</body>
+</html>

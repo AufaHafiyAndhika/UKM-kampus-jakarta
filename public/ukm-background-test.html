@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UKM Background Feature Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>UKM Background Image Feature Test</h1>
+
+    <div class='test-section'>
+        <h2>✅ Feature Implementation Complete</h2>
+        <ul>
+            <li class='success'>✅ Database migration added background_image column</li>
+            <li class='success'>✅ Model updated with fillable field</li>
+            <li class='success'>✅ Admin controller handles background upload</li>
+            <li class='success'>✅ Admin forms include background_image field</li>
+            <li class='success'>✅ UKM views display background images</li>
+        </ul>
+    </div>
+
+    <div class='test-section'>
+        <h2>🔗 Test Pages</h2>
+        <ul>
+            <li><a href='http://127.0.0.1:8000/admin/ukms/create' target='_blank'>Admin: Create UKM (test background upload)</a></li>
+            <li><a href='http://127.0.0.1:8000/admin/ukms' target='_blank'>Admin: UKM Management</a></li>
+            <li><a href='http://127.0.0.1:8000/ukms' target='_blank'>Public: UKM Index (view background)</a></li>
+            <li><a href='http://127.0.0.1:8000/' target='_blank'>Homepage (view background)</a></li>
+        </ul>
+    </div>
+
+    <div class='test-section'>
+        <h2>📋 How to Test</h2>
+        <ol>
+            <li>Go to Admin UKM Management</li>
+            <li>Create or edit a UKM</li>
+            <li>Upload a background image (400x200px recommended)</li>
+            <li>Save the UKM</li>
+            <li>View the UKM on the public pages to see the background</li>
+        </ol>
+    </div>
+
+    <div class='test-section'>
+        <h2>🎨 Background Image Behavior</h2>
+        <ul>
+            <li><strong>Priority:</strong> background_image > banner > gradient</li>
+            <li><strong>Logo:</strong> Displayed as overlay on background</li>
+            <li><strong>Size:</strong> Optimal 400x200px for cards</li>
+            <li><strong>Format:</strong> JPG, PNG, GIF supported</li>
+        </ul>
+    </div>
+</body>
+</html>

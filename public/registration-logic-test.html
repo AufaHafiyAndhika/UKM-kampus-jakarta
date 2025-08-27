@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Logic Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 2px solid #ddd; 
+            border-radius: 10px; 
+            background: #f9f9f9; 
+        }
+        .scenario { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 10px 0; 
+            background: white; 
+        }
+        .status-active { background: #d4edda; color: #155724; padding: 8px 12px; border-radius: 4px; }
+        .status-pending { background: #fff3cd; color: #856404; padding: 8px 12px; border-radius: 4px; }
+        .status-rejected { background: #f8d7da; color: #721c24; padding: 8px 12px; border-radius: 4px; }
+        .btn-register { background: #007bff; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; }
+        .btn-reregister { background: #28a745; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; }
+        .btn-disabled { background: #6c757d; color: white; padding: 8px 16px; border-radius: 4px; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <h1>🔧 UKM Registration Logic Test</h1>
+    
+    <div class='test-section'>
+        <h2>📋 Registration Button Logic</h2>
+        <p>This page demonstrates how the registration button should behave based on membership status:</p>
+        <div class='scenario'>
+            <h4>Scenario: No membership record</h4>
+            <p><strong>Status:</strong> No membership</p><p><strong>Button:</strong> <a href='#' class='btn-register'>➕ Daftar Keanggotaan</a></p></div>
+        <div class='scenario'>
+            <h4>Scenario: Pending application</h4>
+            <p><strong>Status:</strong> pending</p><p><strong>Button:</strong> <span class='status-pending'>⏳ Menunggu Approval</span> (disabled)</p></div>
+        <div class='scenario'>
+            <h4>Scenario: Active member</h4>
+            <p><strong>Status:</strong> active</p><p><strong>Button:</strong> <span class='status-active'>✅ Sudah Bergabung</span></p></div>
+        <div class='scenario'>
+            <h4>Scenario: Inactive member</h4>
+            <p><strong>Status:</strong> inactive</p><p><strong>Button:</strong> <a href='#' class='btn-reregister'>🔄 Daftar Ulang</a></p></div>
+        <div class='scenario'>
+            <h4>Scenario: Alumni member</h4>
+            <p><strong>Status:</strong> alumni</p><p><strong>Button:</strong> <a href='#' class='btn-register'>➕ Daftar Keanggotaan</a></p></div>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🔗 Test Links</h2>
+        <ul>
+            <li><a href='http://127.0.0.1:8000/ukms/imma' target='_blank'><strong>IMMA UKM Detail</strong> - Test registration button logic</a></li>
+            <li><a href='http://127.0.0.1:8000/ukms' target='_blank'><strong>All UKMs</strong> - Test registration buttons in cards</a></li>
+            <li><a href='http://127.0.0.1:8000/login' target='_blank'><strong>Login</strong> - Login as student to test registration</a></li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>✅ Expected Behavior</h2>
+        <ul>
+            <li><strong>No membership:</strong> Show 'Daftar Keanggotaan' button</li>
+            <li><strong>Pending status:</strong> Show 'Menunggu Approval' status (button disabled)</li>
+            <li><strong>Active status:</strong> Show 'Sudah Bergabung' status</li>
+            <li><strong>Rejected/Inactive:</strong> Show 'Daftar Ulang' button</li>
+        </ul>
+    </div>
+    
+    <div class='test-section'>
+        <h2>🧪 Test Instructions</h2>
+        <ol>
+            <li>Login as a student user</li>
+            <li>Visit IMMA UKM detail page</li>
+            <li>Check registration button behavior</li>
+            <li>Submit registration and verify 'Menunggu Approval' status appears</li>
+            <li>Admin can approve/reject from admin panel</li>
+        </ol>
+    </div>
+</body>
+</html>

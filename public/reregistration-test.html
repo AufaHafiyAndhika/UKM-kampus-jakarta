@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🔄 Re-registration Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 25px; 
+            border-radius: 12px; 
+            background: white; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 40px; 
+            border-radius: 12px; 
+            margin-bottom: 30px; 
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info { color: #17a2b8; font-weight: bold; }
+        .workflow-step { 
+            display: flex; 
+            align-items: center; 
+            margin: 15px 0; 
+            padding: 15px; 
+            background: #e3f2fd; 
+            border-radius: 8px; 
+        }
+        .step-number { 
+            background: #2196f3; 
+            color: white; 
+            width: 30px; 
+            height: 30px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-right: 15px; 
+            font-weight: bold; 
+        }
+        .test-link { 
+            display: inline-block; 
+            background: #007bff; 
+            color: white; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            margin: 10px 10px 10px 0; 
+            transition: background 0.3s; 
+        }
+        .test-link:hover { background: #0056b3; color: white; text-decoration: none; }
+        .test-link.success { background: #28a745; }
+        .test-link.success:hover { background: #1e7e34; }
+        .condition-list { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 15px 0; 
+            font-family: monospace; 
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>🔄 Re-registration Test</h1>
+            <p>Testing removed member re-registration capability</p>
+        </div>
+        
+        <div class='test-section'>
+            <h2>📊 Test Results</h2>
+            <div class='condition-list'>
+                <strong>Current Status:</strong><br>
+                ✅ Member completely removed: YES<br>
+                ✅ Membership status: NULL<br>
+                ✅ Should show button: YES<br>
+                ✅ Button text: Daftar Keanggotaan<br>
+                ✅ Can access form: YES<br>
+            </div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🔄 Re-registration Workflow</h2>
+            <div class='workflow-step'>
+                <div class='step-number'>1</div>
+                <div>
+                    <strong>Member gets removed by ketua</strong><br>
+                    <small>Complete removal from pivot table (detach)</small>
+                </div>
+            </div>
+            <div class='workflow-step'>
+                <div class='step-number'>2</div>
+                <div>
+                    <strong>Member visits UKM detail page</strong><br>
+                    <small>Should see 'Daftar Keanggotaan' button</small>
+                </div>
+            </div>
+            <div class='workflow-step'>
+                <div class='step-number'>3</div>
+                <div>
+                    <strong>Member clicks registration button</strong><br>
+                    <small>Should access registration form</small>
+                </div>
+            </div>
+            <div class='workflow-step'>
+                <div class='step-number'>4</div>
+                <div>
+                    <strong>Member submits application</strong><br>
+                    <small>Creates new pending membership</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🧪 Manual Test Instructions</h2>
+            <ol>
+                <li><strong>Login as removed member:</strong> aufa@student.telkomuniversity.ac.id</li>
+                <li><strong>Visit UKM detail page:</strong> Should see registration button</li>
+                <li><strong>Click registration button:</strong> Should access form</li>
+                <li><strong>Fill and submit form:</strong> Should create pending application</li>
+                <li><strong>Check status:</strong> Should show 'Menunggu Approval'</li>
+            </ol>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🔗 Test Links</h2>
+            <a href='http://127.0.0.1:8000/login' class='test-link' target='_blank'>
+                🔐 Login Page
+            </a>
+            <a href='http://127.0.0.1:8000/ukms/imma' class='test-link success' target='_blank'>
+                🏛️ IMMA UKM Detail
+            </a>
+            <a href='http://127.0.0.1:8000/ukms/imma/register' class='test-link' target='_blank'>
+                📝 Registration Form
+            </a>
+        </div>
+        
+        <div class='test-section'>
+            <h2>✅ Expected Behavior</h2>
+            <ul>
+                <li>✅ Removed member sees 'Daftar Keanggotaan' button</li>
+                <li>✅ Registration form is accessible</li>
+                <li>✅ Form submission creates new pending application</li>
+                <li>✅ Status changes to 'Menunggu Approval'</li>
+                <li>✅ Ketua can approve/reject the new application</li>
+            </ul>
+        </div>
+        
+        <div class='test-section'>
+            <h2>🔍 Debug Information</h2>
+            <div class='condition-list'>
+                <strong>View Logic Conditions:</strong><br>                membershipStatus === active: FALSE<br>                membershipStatus === pending: FALSE<br>                ukm->status === active: TRUE<br>                registration_status === open: TRUE<br>                current_members < max_members: TRUE<br>                !membershipStatus: TRUE<br>                membershipStatus === inactive: FALSE<br>                membershipStatus === alumni: FALSE<br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
